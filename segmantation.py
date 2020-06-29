@@ -79,9 +79,12 @@ def k_means(image, k=3):
 
 
 if __name__ == '__main__':
-    file_path = ''
+    import agrparser
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input', default='./data/newdata/orthoa.raw')
+    args = parser.parse_args()
     # 画像の読み込み
-    image = cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
+    image = cv2.imread(args.input, cv2.IMREAD_GRAYSCALE)
 
     # 処理の実行
     image = k_means(image)
