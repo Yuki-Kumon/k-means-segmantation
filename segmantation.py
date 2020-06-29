@@ -79,7 +79,7 @@ def k_means(image, k=3):
 
 
 if __name__ == '__main__':
-    import agrparser
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', default='./data/newdata/orthoa.raw')
     args = parser.parse_args()
