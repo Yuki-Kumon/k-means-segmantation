@@ -44,8 +44,8 @@ def k_means(image, k=3):
 
         # E Phase: 各データが属するグループ（代表色）を計算
         for pix, point in enumerate(pixels):
-            min_dist = 256*256*3
-            point = np.array(point)
+            min_dist = 256*256*1
+            # point = np.array(point)  # 一次元画像なのでこれは無視
             for i in range(k):
                 d = sum([x*x for x in point-center[i]])
                 if d < min_dist:
@@ -71,4 +71,20 @@ def k_means(image, k=3):
     for pix, point in enumerate(pixels):
         pixels[pix] = tuple(center[cls[pix]])
 
-    return pixels
+    # return pixels
+
+    image = pixels.reshape(shape)
+
+    return image
+
+
+if __name__ == '__main__':
+    file_path = ''
+    # 画像の読み込み
+    image = cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
+
+    # 処理の実行
+    image = k_means(image)
+
+    # 結果の書き出し
+    cv2.imwrite('./out.png', image)
