@@ -31,7 +31,7 @@ def k_means(image, k=3):
     center = []
     for i in range(k):
         center.append(np.array([randint(256)]))
-    print map(lambda x: x.tolist(), center)
+    print (map(lambda x: x.tolist(), center))
     distortion = 0
 
     # 最大50回のIterationを実施
@@ -59,8 +59,8 @@ def k_means(image, k=3):
         for i in range(k):
             center_new[i] = center_new[i] / num_points[i]
         center = center_new
-        print map(lambda x: x.tolist(), center)
-        print "Distortion = %d" % distortion_new
+        print (map(lambda x: x.tolist(), center))
+        print ("Distortion = %d" % distortion_new)
 
         # Distortion(J)の変化が0.5%未満になったら終了
         if iter_num > 0 and distortion - distortion_new < distortion * 0.005:
