@@ -16,7 +16,7 @@ from numpy.random import randint
 import cv2
 
 
-def k-means(image, n=3):
+def k_means(image, k=3):
     """
     k-menasを用いて画像をnクラスに分類する
     """
@@ -30,7 +30,7 @@ def k-means(image, n=3):
     # 代表色の初期値をランダムに設定
     center = []
     for i in range(k):
-        center.append(np.array([randint(256), randint(256), randint(256)]))
+        center.append(np.array([randint(256)]))
     print map(lambda x: x.tolist(), center)
     distortion = 0
 
@@ -38,7 +38,7 @@ def k-means(image, n=3):
     for iter_num in range(50):
         center_new = []
         for i in range(k):
-            center_new.append(np.array([0,0,0]))
+            center_new.append(np.array([0]))
         num_points = [0] * k
         distortion_new = 0
 
