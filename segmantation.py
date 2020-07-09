@@ -10,6 +10,7 @@ Last Update:
 """
 
 import argparse
+import cv2
 
 from misc.raw_read import RawRead
 
@@ -35,6 +36,9 @@ if __name__ == '__main__':
     # load image
     image1 = RawRead.read(args.image1_path, rate=rates[0])
     # image2 = RawRead.read(args.image2_path, rate=rates[1])]
+
+    # とりあえず解像度を落としてみる
+    image1 = cv2.resize(image1, (300, 300))
 
     # increase dimention
     image1_edit = ImageUtils.increase_dimension(image1)
