@@ -45,8 +45,10 @@ if __name__ == '__main__':
     image1 = RawRead.read(args.image1_path, rate=rates[0])
     # image2 = RawRead.read(args.image2_path, rate=rates[1])]
 
-    # とりあえず解像度を落としてみる
-    image1 = cv2.resize(image1, (300, 300))
+    # crop images
+    image1 = image1[cut_start[0]:cut_start[0] + cut_size[0], cut_start[1]:cut_start[1] + cut_size[1]]
+    # image2 = image2[cut_start[0]:cut_start[0] + cut_size[0], cut_start[1]:cut_start[1] + cut_size[1]]
+
     cv2.imwrite('./output/origin.png', image1)
 
     # increase dimention
@@ -60,11 +62,11 @@ if __name__ == '__main__':
     res1 = kmeans.predict(image1_data)
 
     # 二次元配列に戻す
-    image1_result = ImageUtils.reshape(res1, [298, 298])
+    image1_result = ImageUtils.reshape(res1, [x - 2 for x in cut_size])
 
     # matplotlibで描画
-    y = range(298)
-    x = range(298)
+    y = range(cut_size[0] - 2)
+    x = range(cut_size[1] - 2)
     xx, yy = np.meshgrid(x, y)
 
     plt.contourf(xx, yy, image1_result)
