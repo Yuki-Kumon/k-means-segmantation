@@ -16,3 +16,6 @@ class Kmeans():
 
     def __init__(self, k_means_params):
         self.k_means = sklearn.cluster.KMeans(**k_means_params)
+
+    def predict(self, data):
+        return self.k_means.fit_predict(data)
