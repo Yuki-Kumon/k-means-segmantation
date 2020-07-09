@@ -59,7 +59,7 @@ if __name__ == '__main__':
     res1 = kmeans.predict(image1_data)
 
     # 二次元配列に戻す
-    image1_result = ImageUtils.reshape(res1, [300, 300])
+    image1_result = ImageUtils.reshape(res1, [298, 298])
 
     # matplotlibで描画
     y = range(300)
