@@ -19,7 +19,7 @@ from utils.image_utils import ImageUtils
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--image1_path', default='./data/newdata/KumonColor/ortho2b.raw')
+    parser.add_argument('--image1_path', default='./data//ortho2b.raw')
     # parser.add_argument('--image2_path', default='./data/newdata/KumonColor/ortho2a.raw')
     parser.add_argument('--rates', default=[1, 1])
 
