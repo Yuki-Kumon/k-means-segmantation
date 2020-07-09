@@ -39,5 +39,10 @@ class ImageUtils():
         return image.reshape([im_shape[0] * im_shape[1], im_shape[2]])
 
     @staticmethod
-    def reshape(image, shape):
-        return image.reshape([x for x in shape[:2]])
+    def reshape(image, shape, flip=True, mirror=False):
+        image = image.reshape([x for x in shape[:2]])
+        if flip:
+            np.flipud(image)
+        if mirror:
+            np.fliplr(image)
+        return image
