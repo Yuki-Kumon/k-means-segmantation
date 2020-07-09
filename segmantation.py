@@ -71,4 +71,4 @@ if __name__ == '__main__':
 
     plt.axes().set_aspect('equal', 'datalim')
     plt.contourf(xx, yy, image1_result)
-    plt.savefig('./output/result.png')
+    plt.savefig('./output/result.png', dpi=500)
