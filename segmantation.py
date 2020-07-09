@@ -47,6 +47,7 @@ if __name__ == '__main__':
 
     # とりあえず解像度を落としてみる
     image1 = cv2.resize(image1, (300, 300))
+    cv2.imwrite('./output/origin.png', image1)
 
     # increase dimention
     image1_edit = ImageUtils.increase_dimension(image1)
@@ -67,4 +68,4 @@ if __name__ == '__main__':
     xx, yy = np.meshgrid(x, y)
 
     plt.contourf(xx, yy, image1_result)
-    plt.savefig('./test.png')
+    plt.savefig('./output/result.png')
