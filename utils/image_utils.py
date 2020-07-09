@@ -42,7 +42,7 @@ class ImageUtils():
     def reshape(image, shape, flip=True, mirror=False):
         image = image.reshape([x for x in shape[:2]])
         if flip:
-            np.flipud(image)
+            image = np.flipud(image)
         if mirror:
-            np.fliplr(image)
+            image = np.fliplr(image)
         return image
