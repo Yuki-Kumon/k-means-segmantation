@@ -67,4 +67,4 @@ if __name__ == '__main__':
     xx, yy = np.meshgrid(x, y)
 
     plt.contourf(xx, yy, image1_result)
-    plt.savefig('./test,png')
+    plt.savefig('./test.png')
