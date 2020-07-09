@@ -62,8 +62,8 @@ if __name__ == '__main__':
     image1_result = ImageUtils.reshape(res1, [298, 298])
 
     # matplotlibで描画
-    y = range(300)
-    x = range(300)
+    y = range(298)
+    x = range(298)
     xx, yy = np.meshgrid(x, y)
 
     plt.contourf(xx, yy, image1_result)
