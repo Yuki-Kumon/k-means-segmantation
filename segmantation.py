@@ -69,5 +69,6 @@ if __name__ == '__main__':
     x = range(cut_size[1] - 2)
     xx, yy = np.meshgrid(x, y)
 
+    plt.axes().set_aspect('equal', 'datalim')
     plt.contourf(xx, yy, image1_result)
     plt.savefig('./output/result.png')
